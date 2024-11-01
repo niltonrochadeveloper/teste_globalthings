@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image";
 import Navbar from "@/components/shared/navbar";
 import Menu from "@/components/shared/menu";
 import type { Metadata } from "next";
@@ -21,12 +21,12 @@ const LayoutDashboardPage = async ({
           href="/"
           className="flex items-center justify-center lg:justify-start gap-2"
         >
-          <Image
-            src="/images/logo-hack-cor-preto-azul.png"
+          {/* <Image
+            src="/images/..."
             alt="logo"
             width={129}
             height={44}
-          />
+          /> */}
         </Link>
         <Menu />
       </div>
