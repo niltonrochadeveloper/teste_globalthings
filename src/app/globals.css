@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Digital Blue */
+  --color-primary-light: #3750e4;
+  --color-primary-default: #0524dd;
+  --color-primary-dark: #041db1;
+
+  /* Blue Sky */
+  --color-secondary-light: #33adff;
+  --color-secondary-default: #0098ff;
+  --color-secondary-dark: #007acc;
+
+  /* Peaceful Night */
+  --color-tertiary-light: #201a80;
+  --color-tertiary-default: #070072;
+  --color-tertiary-dark: #06005b;
+
+  /* Deep Black */
+  --color-black-light: #343434;
+  --color-black-default: #1d1d1d;
+  --color-black-dark: #1a1a1a;
+
+  /* Bright Gray */
+  --color-gray-light: #f1f1f1;
+  --color-gray-default: #efefef;
+  --color-gray-dark: #d7d7d7;
+
+  /* Highlights */
+  --color-success: #1eae83;
+  --color-error: #ce0f32;
+  --color-warning: #f8c81d;
+
+  /* tema light */
+  --background-light: var(--color-gray-light);
+  --text-light: var(--color-tertiary-default);
+
+  /* tema dark */
+  --background-dark: var(--color-black-dark);
+  --text-dark: var(--color-tertiary-light);
+
+  background: var(--background-light);
+  --text-color: var(--text-light);
+}
+
+.dark {
+  background: var(--background-dark);
+  --text-color: var(--text-dark);
+}
+
+body {
+  body {
+    font-family: var(--font-darker-grotesque, var(--font-inter));
+  }
+}
