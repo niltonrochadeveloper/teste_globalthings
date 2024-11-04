@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 const Page = () => {
   const {
-    triggerPostUser: { data, isLoading, isError, isSuccess },
+    triggerPostUser: { data },
   } = useHeroes();
 
   useEffect(() => {

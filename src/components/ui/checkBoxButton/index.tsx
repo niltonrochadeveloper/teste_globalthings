@@ -3,7 +3,6 @@
 import * as React from "react";
 import { useFormContext, Controller } from "react-hook-form";
 import { ButtonForRadioButton } from "@/components/ui/button";
-import clsx from "clsx";
 
 interface CheckboxProps {
   label: string;
