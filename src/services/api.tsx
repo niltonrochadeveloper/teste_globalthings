@@ -1,44 +1,34 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import {
-  BaseQueryFn,
-  FetchArgs,
-  createApi,
-  fetchBaseQuery,
-  FetchBaseQueryError,
-} from "@reduxjs/toolkit/query/react";
+import axios, { AxiosHeaders, AxiosInstance } from "axios";
 
-import type { ApiResponse } from "@/models/Common";
+const myHeaders = new AxiosHeaders({
+  setAccept: "application/json",
+  'accessKey': '6af33c8acec4472ca69a5c91fe1b9e6b'
+});
 
-const baseQuery = fetchBaseQuery({
-  baseUrl: process.env.NEXT_PUBLIC_API_URL,
-  prepareHeaders: (headers: Headers) => {
-    headers.set("Content-type", "application/json");
+const axiosInstance: AxiosInstance = axios.create({
+  baseURL: process.env.NEXT_PUBLIC_API_URL,
+  headers: myHeaders,
+  timeout: 15000,
+});
 
-    headers.set("api_key", `${process.env.NEXT_PUBLIC_API_KEY}`);
-
-    return headers;
+// request interceptor
+axiosInstance.interceptors.request.use(
+  (config) => {
+    return config;
   },
-});
+  (error) => Promise.reject(error)
+);
 
-const baseQueryWithInterceptor: BaseQueryFn<
-  string | FetchArgs,
-  unknown,
-  FetchBaseQueryError
-> = async (args, api, extraOptions) => {
-  const response = await baseQuery(args, api, extraOptions);
-  const data = response.data as ApiResponse<any>;
-  const error = response.error as FetchBaseQueryError;
-  if (error && [401, 403].includes(error.status as number)) {
-  }
-  if (data) {
-    if (data.status === 200) {
+// response interceptor
+axiosInstance.interceptors.response.use(
+  (response) => {
+    return response;
+  },
+  (error) => {
+    if (error.response && error.response.status === 401) {
     }
+    return Promise.reject(error);
   }
-  return response;
-};
+);
 
-export const api = createApi({
-  baseQuery: baseQueryWithInterceptor,
-  endpoints: () => ({}),
-  refetchOnReconnect: true,
-});
+export default axiosInstance;

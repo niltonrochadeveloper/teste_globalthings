@@ -1,24 +1,24 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { setHeroes } from "@/lib/store";
-import { ApiResponse } from "@/models/Common";
 import type { Heroes } from "@/models/types/heroes";
-import { api } from "@/services/api";
+import api from "@/services/api";
 
-export const heroesApi = api.injectEndpoints({
-  endpoints: (build) => ({
-    getHeroes: build.query<ApiResponse<Heroes[]>, void>({
-      query: () => ({
-        url: "/Heroes",
-      }),
-      onQueryStarted: async (_, { dispatch, queryFulfilled }) => {
-        const { data }: any = await queryFulfilled;
-        if (data.result && data.status == 200) {
-          dispatch(setHeroes(data.result));
-        }
+const heroesService = () => {
+  const getHeroes = async (): Promise<Heroes[]> => {
+    const { data: result } = await api.get("/Heroes", {
+      params: {
+        skip: 0,
+        take: 10,
       },
-    }),
-  }),
-  overrideExisting: false,
-});
+      headers: {
+        accessKey: `${process.env.NEXT_PUBLIC_API_KEY}`,
+        Accept: "application/json",
+      },
+    });
+    return result;
+  };
 
-export const { useLazyGetHeroesQuery } = heroesApi;
+  return {
+    getHeroes,
+  };
+};
+
+export default heroesService;

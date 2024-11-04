@@ -10,6 +10,13 @@ const reducers = combineReducers({
 
 export const store = configureStore({
   reducer: reducers,
+  middleware: (getDefaultMiddleware) => {
+    const middlewares = getDefaultMiddleware({ serializableCheck: false })
+      .prepend()
+      .concat();
+
+    return middlewares;
+  },
 });
 
 type RootState = ReturnType<typeof store.getState>;
