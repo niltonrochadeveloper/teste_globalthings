@@ -12,7 +12,8 @@ import { PencilIcon } from "lucide-react";
 import { useState } from "react";
 
 const editCategoryModal = ({ itemToEdit }: { itemToEdit: CategoryProps }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   return (
     <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
       <DialogTrigger asChild className="cursor-pointer">

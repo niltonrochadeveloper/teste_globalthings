@@ -1,4 +1,5 @@
-import { MenuIcon, SearchIcon } from "lucide-react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { MenuIcon } from "lucide-react";
 
 const Navbar = (props: any) => {
   return (

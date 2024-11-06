@@ -1,23 +1,20 @@
 "use client";
 
-import EditHeroForm from "@/components/common/forms/EditHeroForm";
-import DeleteHeroModal from "@/components/shared/deleteHeroModal";
-import EditHeroModal from "@/components/shared/editHeroModal";
 import { Spinner } from "@/components/ui";
 import useHeroes from "@/hooks/useHeroes";
 import { RefreshCcw } from "lucide-react";
 import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const HeroesByIdPage = () => {
   const { id } = useParams();
-  const [open, setOpen] = useState<boolean>(false);
   const {
     triggerGetHeroesById: { data, mutateAsync, isPending, isSuccess, isError },
   } = useHeroes();
 
   useEffect(() => {
     mutateAsync({ Id: Number(id) });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (isPending) {

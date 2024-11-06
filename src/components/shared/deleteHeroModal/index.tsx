@@ -10,7 +10,6 @@ import {
   DialogHeader,
   DialogTrigger,
 } from "@/components/ui";
-import useCategory from "@/hooks/useCategory";
 import useHeroes from "@/hooks/useHeroes";
 import { Heroes } from "@/models/types/heroes";
 import { EraserIcon } from "lucide-react";

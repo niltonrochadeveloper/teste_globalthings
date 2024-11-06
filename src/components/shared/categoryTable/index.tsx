@@ -8,7 +8,6 @@ import {
 } from "@/components/ui";
 import { CategoryProps } from "@/models/types/category";
 import EditModal from "../editCategoryModal";
-import DeleteModal from "../deleteCategoryModal";
 import CreateCategory from "../createCategory";
 import DeleteCategoryModal from "../deleteCategoryModal";
 

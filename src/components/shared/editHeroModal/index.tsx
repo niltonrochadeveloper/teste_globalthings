@@ -12,6 +12,7 @@ import { PencilIcon } from "lucide-react";
 import { useState } from "react";
 
 const editHeroModal = ({ itemToEdit }: { itemToEdit: Heroes }) => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>

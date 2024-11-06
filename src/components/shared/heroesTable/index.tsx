@@ -9,7 +9,6 @@ import {
 import { Heroes } from "@/models/types/heroes";
 import CreateHero from "../createHero";
 import EditHeroModal from "../editHeroModal";
-import DeleteModal from "../deleteCategoryModal";
 import DeleteHeroModal from "../deleteHeroModal";
 import { EyeIcon } from "lucide-react";
 import Link from "next/link";

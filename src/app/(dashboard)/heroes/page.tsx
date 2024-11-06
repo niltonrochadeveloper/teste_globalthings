@@ -2,7 +2,7 @@
 "use client";
 
 import HeroesTable from "@/components/shared/heroesTable";
-import { Button, Spinner } from "@/components/ui";
+import { Spinner } from "@/components/ui";
 import useHeroes from "@/hooks/useHeroes";
 import { RefreshCcw } from "lucide-react";
 import { Suspense, useEffect } from "react";

@@ -1,10 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import Navbar from "@/components/shared/navbar";
 import Menu from "@/components/shared/menu";
 import { useState } from "react";
-import { MenuIcon } from "lucide-react";
 
 const LayoutDashboardPage = ({ children }: { children: React.ReactNode }) => {
   const [menuOpen, setMenuOpen] = useState<boolean>(true);

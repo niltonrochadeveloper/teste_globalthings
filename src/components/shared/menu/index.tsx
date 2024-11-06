@@ -1,12 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Link from "next/link";
-import AnchorClick from "./anchor";
-import {
-  HomeIcon,
-  AtomIcon,
-  ChartBarIcon,
-  MenuIcon,
-  XIcon,
-} from "lucide-react";
+import { AtomIcon, ChartBarIcon, XIcon } from "lucide-react";
 
 const Menu = (props: any) => {
   return (
