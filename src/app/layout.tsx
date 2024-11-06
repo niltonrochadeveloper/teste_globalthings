@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import Provider from "@/providers";
+import { Toaster } from "@/components/ui/toast/toaster";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -10,8 +11,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Jornalismo de bolso",
-  description: "Jornalismo de alto impacto",
+  title: "CMS Heróis",
+  description: "",
 };
 
 export default function RootLayout({
@@ -32,7 +33,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div>{children}</div>
+          <main>{children}</main>
+          <Toaster />
         </Provider>
       </body>
     </html>

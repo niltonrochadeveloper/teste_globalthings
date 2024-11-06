@@ -1,23 +1,16 @@
 "use client";
 
-import useHeroes from "@/hooks/useHeroes";
+import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
 const Page = () => {
-  const {
-    triggerPostUser: { data },
-  } = useHeroes();
+  const router = useRouter();
 
   useEffect(() => {
-    console.log("data", data);
-  }, [data]);
+    router.replace("/heroes");
+  }, [router]);
 
-  return (
-    <div className="h-full flex gap-4 w-full">
-      <h2>Page</h2>
-      {}
-    </div>
-  );
+  return;
 };
 
 export default Page;
