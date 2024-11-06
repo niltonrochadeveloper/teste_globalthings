@@ -7,6 +7,10 @@ export interface Heroes {
   Category: CategoryProps;
 }
 
+export interface CreateHeroes extends Pick<Heroes, "Name" | "Active"> {
+  CategoryId: number;
+}
+
 export interface HeroesProps {
   heroes: HeroesProps[];
 }
