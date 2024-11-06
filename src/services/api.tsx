@@ -1,17 +1,14 @@
-import axios, { AxiosHeaders, AxiosInstance } from "axios";
-
-const myHeaders = new AxiosHeaders({
-  setAccept: "application/json",
-  'accessKey': '6af33c8acec4472ca69a5c91fe1b9e6b'
-});
+import axios, { AxiosInstance } from "axios";
 
 const axiosInstance: AxiosInstance = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL,
-  headers: myHeaders,
+  headers: {
+    setAccept: "application/json",
+    accessKey: "6af33c8acec4472ca69a5c91fe1b9e6b",
+  },
   timeout: 15000,
 });
 
-// request interceptor
 axiosInstance.interceptors.request.use(
   (config) => {
     return config;
@@ -19,7 +16,6 @@ axiosInstance.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-// response interceptor
 axiosInstance.interceptors.response.use(
   (response) => {
     return response;
