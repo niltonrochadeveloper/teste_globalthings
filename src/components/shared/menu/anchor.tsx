@@ -9,7 +9,7 @@ const AnchorClick = () => {
       onClick={() => {}}
       className="flex items-center justify-center lg:justify-start gap-4 text-gray-500 py-2 md:px-2 rounded-md hover:bg-lamaSkyLight"
     >
-      <span className="hidden lg:block">Sair</span>
+      <span className="hidden ">Sair</span>
     </Link>
   );
 };
